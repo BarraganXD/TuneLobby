@@ -1,0 +1,811 @@
+@import url('https://fonts.googleapis.com/css2?family=Cousine:wght@400;700&family=Space+Mono&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Cousine', monospace;
+    font-weight: bold;
+    font-size: 1.7vw;
+}
+
+body {
+    background: #040f16;
+    background: linear-gradient(180deg, #040f16 0%, #313a41 21%, #ffffff 83%);
+}
+
+.page {
+    display: grid;
+    grid-template-rows: repeat(18, 6vw);
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1.5vw;
+}
+
+.top,
+.mid {
+    width: 97%;
+    margin: 1.5% auto;
+}
+
+.top {
+    margin-bottom: 3%;
+}
+
+.mid {
+    margin: 3% 0;
+}
+
+.bot {
+    width: 100%;
+    margin: 0;
+    margin-top: 3%;
+}
+
+.bot main {
+    width: 97%;
+    margin: 0 auto;
+}
+
+
+
+/*/////////////////////TOP SECTION/////////////////////*/
+
+.top {
+    grid-column: 1/13;
+    grid-row: 1/7;
+
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1.5vw;
+}
+
+
+/*/////////////////////HEADER/////////////////////*/
+
+header {
+    grid-column: 1/13;
+    grid-row: 1/2;
+
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1.5vw;
+    align-items: center;
+}
+
+header .logoLink {
+    grid-column: 1/3;
+    height: 100%;
+    width: 60%;
+    margin: 0 auto;
+}
+
+header .logoLink .logo {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+
+    background-image: url(assets/TUNE-logo-DarkMode-transparent.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    position: relative;
+}
+
+header .logoLink .logo::before {
+    content: "";
+    position: absolute;
+    background-color: #b90018; /* be0016 */
+    top: -190%;
+    left: -10%;
+    width: 120%;
+    height: 160%;
+    z-index: -1;
+
+    transition: all 0.3s;
+    transition-timing-function: cubic-bezier(.21,1.16,.87,.95);
+
+    clip-path: polygon(0% 0%, 100% 0%, 100% 85%, 50% 100%, 0% 85%);
+}
+
+header .logoLink .logo:hover::before {
+    top: -30%;
+}
+
+header .logo h1 {
+    display: none;
+}
+
+header .inicioLink {
+    grid-column: 9/11;
+    height: 50%;
+    width: 100%;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .inicio {
+    color: white;
+    background-color: #1D84B5;
+    border: 1px solid white;
+
+    border-radius: 0.5vw;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .registroLink {
+    grid-column: 11/13;
+    height: 50%;
+    width: 100%;
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header .registro {
+    color: black;
+    background-color: #F6AE2D;
+    border: 1px solid white;
+    border-radius: 0.5vw;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header p {
+    font-size: 1.5vw;
+}
+
+
+/*/////////////////////MAIN/////////////////////*/
+
+.top .main {
+    /* background-color: #58b2e6; */
+    grid-column: 1/13;
+    grid-row: 2/7;
+
+    display: grid;
+    grid-template-rows: repeat(5, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1.5vw;
+}
+
+/*/////////////////////INSTRUMENTOS/////////////////////*/
+.col_instrumentos {
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1.5vw;
+    justify-items: center;
+}
+
+.col_instrumentos1 {
+    grid-column: 1/3;
+    grid-row: 1/6;
+}
+
+#instrumento1 {
+    background-image: url(assets/instruments/electricGuitar.png);
+}
+
+#instrumento2 {
+    background-image: url(assets/instruments/doubleBass.png);
+}
+
+#instrumento3 {
+    background-image: url(assets/instruments/altoSaxo.png);
+}
+
+#instrumento4 {
+    background-image: url(assets/instruments/synth.png);
+}
+
+.col_instrumentos2 {
+    grid-column: 11/13;
+    grid-row: 1/6;
+}
+
+#instrumento5 {
+    background-image: url(assets/instruments/claps.png);
+}
+
+#instrumento6 {
+    background-image: url(assets/instruments/cymbal.png);
+}
+
+#instrumento7 {
+    background-image: url(assets/instruments/snareDrum.png);
+}
+
+#instrumento8 {
+    background-image: url(assets/instruments/bassDrum.png);
+}
+
+.col_instrumentos .instrumento {
+    color: white;
+    grid-column: 1/3;
+    width: 7.5vw;
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: grab;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all .3s ease-in-out;
+    filter: drop-shadow(0.75vw 0.75vw 0.1vw #a8b6bf)
+}
+
+.col_instrumentos .instrumento:hover {
+    transform: scale(1.3);
+    filter: drop-shadow(0px 0px #00000000);
+}
+
+.dragging {
+    filter: drop-shadow(0px 0px #00000000) opacity(0.3) !important;
+    cursor: grabbing;
+}
+
+
+/*/////////////////////CONTROL/////////////////////*/
+
+.control {
+    height: 10%;
+    background-color: #D9D9D9;
+    width: 30%;
+    align-self: end;
+    margin: 0 5%;
+    border-top-left-radius: 1vw;
+    border-top-right-radius: 1vw;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.control button {
+    display: flex;
+    border: none;
+    background-color: #00000000;
+
+    transition: all 0.15s ease-in-out;
+}
+
+.control button:hover {
+    transform: scale(1.3);
+}
+
+.control img {
+    width: 2vw;
+}
+
+.bpmDiv {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.bpmDiv input {
+    width: 4vw;
+}
+
+
+/*/////////////////////LIENZO/////////////////////*/
+
+.lienzoParent {
+    grid-column: 3/11;
+    grid-row: 1/6;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.lienzo {
+    border: 1px solid white;
+    background-color: #FBFBFF;
+    border-radius: 3vw;
+    grid-column: 1/9;
+    grid-row: 2/6;
+    height: 80%;
+
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(8, 1fr);
+    grid-gap: 1.5vw;
+}
+
+.fila {
+    grid-column: 1/9;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.linea {
+    height: 5px;
+    width: 95%;
+    background-color: black;
+}
+
+.notas {
+    width: 58vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    position: absolute;
+}
+
+.notas * {
+    box-sizing: border-box;
+}
+
+.celda {
+    height: 6vw;
+    width: 5vw;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item {
+    transition: all 0.25s ease-in-out;
+}
+
+.item[isEmpty="true"] {
+    background-color: #d9d9d9ea;
+    border: 0.3vw dashed black;
+    height: 5vw;
+    width: 100%;
+    border-radius: 100%;
+}
+
+.drag-over {
+    border: 0.3vw solid black !important;
+    transform: scale(1.2);
+}
+
+.item[isEmpty="false"] {
+    background-color: #d9d9d9;
+    border: 0.3vw solid black;
+    height: 5.7vw;
+    width: 100%;
+    border-radius: 20% 20% 50% 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.item[isEmpty="false"] p {
+    font-size: 1.5vw;
+}
+
+.item[isEmpty="false"] .instrumento {
+    width: 100%;
+    height: 69%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    justify-self: flex-end;
+}
+
+.item[isEmpty="false"] .melodico {
+    height: 100%;
+    width: 100%;
+}
+
+.item[isEmpty="false"] .ritmico {
+    height: 100%;
+    width: 100%;
+}
+
+.pestanyas {
+    height: 10%;
+    align-self: start;
+    width: 100%;
+    margin: 0 5%;
+
+    display: flex;
+    flex-direction: row;
+}
+
+.pestanyas div {
+    font-size: 1.2vw;
+    background-color: #D9D9D9;
+    border: 1px solid black;
+    border-top: none;
+    border-collapse: collapse;
+    width: 15%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* .lienzo .instrumento {
+    height: 100%;
+    width: 100%;
+} */
+
+
+/*/////////////////////MID SECTION/////////////////////*/
+
+.mid {
+    grid-column: 1/13;
+    grid-row: 7/13;
+
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1.5vw;
+}
+
+.mid .titulo {
+    color: white;
+    grid-column: 1/13;
+    grid-row: 1/2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mid h2 {
+    font-size: 3vw;
+}
+
+.mid main {
+    grid-column: 1/13;
+    grid-row: 2/7;
+
+    position: relative;
+}
+
+.mid .demo {
+    width: 40%;
+    height: 70%;
+    border: 0.4vw solid white;
+    border-radius: 1.5vw;
+}
+
+.mid .demo1 {
+    background-image: url(assets/demos/demo1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 8;
+
+    position: absolute;
+    margin-left: 2%;
+}
+
+.mid .demo2 {
+    background-image: url(assets/demos/demo2.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 60%;
+    z-index: 9;
+
+    position: absolute;
+    margin-left: 30%;
+    margin-top: 17%;
+}
+
+.mid .demo3 {
+    background-image: url(assets/demos/demo3.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    height: 70%;
+    z-index: 10;
+
+    position: absolute;
+    margin-top: 0.4%;
+    margin-left: 58%;
+}
+
+/*/////////////////////BOT SECTION/////////////////////*/
+
+.bot {
+    /* background-color: #c2c2c2; */
+    grid-column: 1/13;
+    grid-row: 13/19;
+
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1.5vw;
+}
+
+
+/*/////////////////////BOT MAIN/////////////////////*/
+
+.bot main {
+    /* background-color: #dbbe88c9; */
+    grid-column: 1/13;
+    grid-row: 1/4;
+
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1.5vw;
+}
+
+.bot main .cuadro {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bot main .cuadro .cuadroIcono {
+    width: 100%;
+}
+
+.bot .cuadro h3 {
+    font-weight: bold;
+    font-size: 2vw;
+}
+
+.bot .cuadro p {
+    font-weight: normal;
+    font-size: 1.6vw;
+}
+
+.bot main .cuadro1 {
+    grid-column: 1/5;
+    grid-row: 1/4;
+}
+
+.bot .cuadro1 .cuadroIcono {
+    height: 40%;
+    background-image: url(assets/cuadros/cerebro.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.bot main .cuadro2 {
+    grid-column: 5/9;
+    grid-row: 1/4;
+}
+
+.bot main .cuadro2 .cuadroIcono {
+    height: 40%;
+    background-image: url(assets/cuadros/gallery.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.bot main .cuadro3 {
+    grid-column: 9/13;
+    grid-row: 1/4;
+}
+
+.bot main .cuadro3 .cuadroIcono {
+    height: 40%;
+    background-image: url(assets/cuadros/hands.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+
+/*/////////////////////FOOTER/////////////////////*/
+
+footer {
+    background-color: #D9D9D9;
+    grid-column: 1/13;
+    grid-row: 4/7;
+
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 1.5vw;
+}
+
+footer .left {
+    padding: 2.5% 0;
+    background-color: #dadadaaf;
+    grid-column: 1/5;
+    grid-row: 1/4;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer .left a {
+    height: 50%;
+    width: 100%;
+}
+
+footer .left .logo {
+    background-image: url(assets/TUNE-logo-LightMode-transparent.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+}
+
+footer .left .redes {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 20%;
+    width: 70%;
+}
+
+footer .left .redes div {
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    height: 100%;
+    width: 100%;
+}
+
+footer .left .redes div a {
+    display: inline-block;
+    width: 75%;
+    height: 100%;
+}
+
+footer .left .redes .tw {
+    background-image: url(assets/socialMedia/icons8-twitter.svg);
+}
+
+footer .left .redes .ig {
+    background-image: url(assets/socialMedia/icons8-instagram.svg);
+}
+
+footer .left .redes .fb {
+    background-image: url(assets/socialMedia/icons8-facebook.svg);
+}
+
+footer .left .redes .yt {
+    background-image: url(assets/socialMedia/icons8-youtube.svg);
+}
+
+footer .left .derechos {
+    height: 10%;
+}
+
+footer .left .derechos p {
+    font-size: 1.2vw;
+}
+
+footer .right {
+    background-color: #dadadaaf;
+    grid-column: 7/13;
+    grid-row: 1/4;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer .right .secciones {
+    height: 50%;
+    width: 90%;
+
+    background-color: #dadadaaf;
+    grid-column: 1/7;
+    grid-row: 1/3;
+
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5vw;
+}
+
+footer .right .secciones p {
+    font-size: 1.1vw;
+}
+
+footer .right .secciones a {
+    color: inherit;
+    text-decoration: none;
+}
+
+footer .right .secciones .cabecera p {
+    font-size: 1.5vw;
+}
+
+footer .right .secciones div {
+    grid-row: 1/4;
+}
+
+footer .right .secciones div div {
+    margin-bottom: 0.7vw;
+}
+
+
+footer .right .newsletter {
+    grid-column: 1/7;
+    grid-row: 3/4;
+    width: 70%;
+}
+
+.newsletter p {
+    font-size: 1.5vw;
+    text-align: left;
+}
+
+.newsletter form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
+    gap: 2%;
+}
+
+.newsletter input {
+    color: #040f16;
+    height: 2.3vw;
+    width: 85%;
+    border: 2px solid #858585;
+    border-radius: 0.5vw;
+    font-size: 1.2vw;
+}
+
+.newsletter input::placeholder {
+    color: #afafaf;
+}
+
+.newsletter button {
+    height: 2.5vw;
+    width: 8%;
+    border: 2px solid #afafaf;
+    border-radius: 0.5vw;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: all 0.2s ease;
+}
+
+.newsletter button:hover {
+    transform: scale(1.2);
+}
+
+.newsletter button img {
+    width: 2vw;
+    object-fit: contain;
+    filter: invert(0.6);
+}

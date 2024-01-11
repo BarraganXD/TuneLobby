@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuneLobby</title>
+    <link rel="stylesheet" href="estilos.css">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+    <link rel="mask-icon" href="assets/favicon/safari-pinned-tab.svg" color="#040f16">
+    <meta name="msapplication-TileColor" content="#040f16">
+    <meta name="theme-color" content="#040f16">
+
+    <!-- 
+        https://realfavicongenerator.net
+        https://iconos8.es
+        https://www.flaticon.es
+        https://developer.mozilla.org/es/
+        https://www.w3schools.com
+     -->
+</head>
+
+<body>
+    <!--GRID PRINCIPAL-->
+    <div class="page">
+        <!--PRIMER TERCIO-->
+        <div class="top">
+            <!--HEADER-->
+            <header>
+                <a href="index.html" class="logoLink">
+                    <div class="logo">
+                        <h1>Logo</h1>
+                    </div>
+                </a>
+
+                <a href="#paginaInicioSesion" class="inicioLink">
+                    <div class="inicio">
+                        <p>Inicia sesión</p>
+                    </div>
+                </a>
+
+                <a href="#paginaRegistro" class="registroLink">
+                    <div class="registro">
+                        <p>Regístrate</p>
+                    </div>
+                </a>
+            </header>
+
+            <!--CONTENIDO PRINCIPAL-->
+            <div class="main">
+                <!--COLUMNA DE INSTRUMENTOS DE LA IZQUIERDA-->
+                <div class="col_instrumentos col_instrumentos1">
+                    <div id="instrumento1" class="instrumento draggable" tipo="melodico" draggable="true"></div>
+                    <div id="instrumento2" class="instrumento draggable" tipo="melodico" draggable="true"></div>
+                    <div id="instrumento3" class="instrumento draggable" tipo="melodico" draggable="true"></div>
+                    <div id="instrumento4" class="instrumento draggable" tipo="melodico" draggable="true"></div>
+                </div>
+
+                <div class="lienzoParent">
+                    <!--CONTROL-->
+                    <div class="control">
+                        <div>
+                            <button id="toStart" onclick="hasPulsado(this)"><img src="assets/media_control/skip-to-start.png"
+                                    alt="toStart"></button>
+                        </div>
+                        <div>
+                            <button id="play" onclick="hasPulsado(this)"><img src="assets/media_control/play.png"
+                                    alt="play"></button>
+                        </div>
+                        <div>
+                            <button id="repeat" onclick="hasPulsado(this)"><img src="assets/media_control/repeat.png"
+                                    alt="repeat"></button>
+                        </div>
+                        <div class="bpmDiv">
+                            <img src="assets/media_control/quarter-note.png" alt="quarterNote">
+                            <img src="assets/media_control/equals-symbol.png" alt="equals">
+                            <input type="text" name="bpm" id="bpm" value="180">
+                        </div>
+                    </div>
+
+                    <!--LIENZO-->
+                    <div class="lienzo">
+                        <div class="fila fila1">
+                            <div class="linea"></div>
+                            <div class="linea"></div>
+                            <div class="linea"></div>
+                            <div class="notas">
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fila fila2">
+                            <div class="linea"></div>
+                            <div class="linea"></div>
+                            <div class="linea"></div>
+                            <div class="notas">
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="fila fila3">
+                            <div class="linea"></div>
+                            <div class="linea"></div>
+                            <div class="linea"></div>
+                            <div class="notas">
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                                <div class="celda">
+                                    <div class="item" isEmpty="true"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--PESTANYAS-->
+                    <div class="pestanyas">
+                        <div>Pestaña #1</div>
+                        <div>Pestaña #2</div>
+                        <div>Pestaña #3</div>
+                        <div>Pestaña #4</div>
+                        <div>+</div>
+                    </div>
+                </div>
+
+                <!--COLUMNA DE INSTRUMENTOS DE LA DERECHA-->
+                <div class="col_instrumentos col_instrumentos2">
+                    <div id="instrumento5" class="instrumento draggable" tipo="ritmico" draggable="true"></div>
+                    <div id="instrumento6" class="instrumento draggable" tipo="ritmico" draggable="true"></div>
+                    <div id="instrumento7" class="instrumento draggable" tipo="ritmico" draggable="true"></div>
+                    <div id="instrumento8" class="instrumento draggable" tipo="ritmico" draggable="true"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--SEGUNDO TERCIO-->
+        <div class="mid">
+            <!--TITULO DE LA SECCION-->
+            <div class="titulo">
+                <h2>CREA TUS TEMAS, COMPÁRTELOS Y EXPLORA</h2>
+            </div>
+            <!--DEMO VISUAL-->
+            <main>
+                <div class="demo demo1">
+
+                </div>
+                <div class="demo demo2">
+
+                </div>
+                <div class="demo demo3">
+
+                </div>
+            </main>
+        </div>
+
+        <!--TERCER TERCIO-->
+        <div class="bot">
+            <!--CONTENIDO PRINCIPAL-->
+            <main>
+                <div class="cuadro cuadro1">
+                    <div class="cuadroIcono"></div>
+                    <h3>Para todos los niveles</h3>
+                    <p>Desde los más novatos hasta
+                        los más experimentados podrán
+                        disfrutar de nuestra herramienta</p>
+                </div>
+                <div class="cuadro cuadro2">
+                    <div class="cuadroIcono"></div>
+                    <h3>Una red de creatividad</h3>
+                    <p>Descubre la música de tus
+                        creadores favoritos y publica
+                        tus obras para que vean la
+                        luz del mundo</p>
+                </div>
+                <div class="cuadro cuadro3">
+                    <div class="cuadroIcono"></div>
+                    <h3>Nos adaptamos a ti</h3>
+                    <p>Escuchamos a nuestros
+                        usuarios para que la
+                        experiencia creativa no haga
+                        más que mejorar</p>
+                </div>
+            </main>
+
+            <!--FOOTER-->
+            <footer>
+                <div class="left">
+                    <a href="index.html">
+                        <div class="logo"></div>
+                    </a>
+                    <div class="redes">
+                        <div class="tw">
+                            <a href="https://twitter.com"></a>
+                        </div>
+                        <div class="ig">
+                            <a href="https://instagram.com"></a>
+                        </div>
+                        <div class="fb">
+                            <a href="https://facebook.com"></a>
+                        </div>
+                        <div class="yt">
+                            <a href="https://youtube.com"></a>
+                        </div>
+                    </div>
+                    <div class="derechos">
+                        <p>Tune Lobby © 2023 Alejandro Barragán.</p>
+                        <p>Todos los derechos reservados.</p>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="secciones">
+                        <div class="funciones">
+                            <div class="cabecera">
+                                <p>Funciones</p>
+                            </div>
+                            <div>
+                                <a href="#"><p>Cómo empezar</p></a>
+                            </div>
+                            <div>
+                                <a href="#"><p>Mezclar</p></a>
+                            </div>
+                            <div>
+                                <a href="#"><p>Masterizar</p></a>
+                            </div>
+                            <div>
+                                <a href="#"><p>Publicación</p></a>
+                            </div>
+                        </div>
+                        <div class="ayuda">
+                            <div class="cabecera">
+                                <p>Ayuda</p>
+                            </div>
+                            <div>
+                                <a href="#"><p>Asistencia</p></a>
+                            </div>
+                            <div>
+                                <a href="#"><p>Comunidad</p></a>
+                            </div>
+                            <div>
+                                <a href="#"><p>Blog</p></a>
+                            </div>
+                        </div>
+                        <div class="empresa">
+                            <div class="cabecera">
+                                <p>Empresa</p>
+                            </div>
+                            <div>
+                                <a href="#"><p>Quienes somos</p></a>
+                            </div>
+                            <div>
+                                <a href="#"><p>Legal</p></a>
+                            </div>
+                            <div>
+                                <a href="#"><p>Contacto</p></a>
+                            </div>
+                            <div>
+                                <a href="#"><p>Privacidad</p></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="newsletter">
+                        <p>Suscríbete a nuestra newsletter</p>
+                        <form action="#" method="post">
+                            <input type="text" name="newsletter" id="newsletter" placeholder="Aquí tu correo...">
+                            <button type="submit">
+                                <img src="assets/socialMedia/mail.png" alt="Suscribirse al correo">
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+</body>
+
+<script src="JavaScript/funciones.js"></script>
+<script src="JavaScript/dragDrop.js"></script>
+
+</html>
