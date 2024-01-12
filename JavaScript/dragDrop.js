@@ -48,6 +48,10 @@ function dragLeave(e) {
 
 function drop(e) {
     e.target.classList.remove('drag-over');
+    e.target.removeEventListener('dragenter', dragEnter)
+    e.target.removeEventListener('dragover', dragOver);
+    e.target.removeEventListener('dragleave', dragLeave);
+    e.target.removeEventListener('drop', drop);
 
     // Guardar el elemento original
     const id = e.dataTransfer.getData('text/plain');
